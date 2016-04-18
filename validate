@@ -1,0 +1,9 @@
+#!/bin/bash
+###Validate all aws templates in current folder###
+
+for i in `ls|grep -v 'README.md'`; 
+
+do /usr/local/aws/bin/aws cloudformation validate-template --template-body file:////$PWD/$i;
+
+done
+
